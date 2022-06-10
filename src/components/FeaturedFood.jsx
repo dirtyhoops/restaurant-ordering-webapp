@@ -1,28 +1,24 @@
 import {
   StyledFeaturedFood,
-  FeaturedFoodFlex,
-  FeaturedFoodBox,
-  FoodImage,
-  FoodCalories,
-  FoodName,
-  FoodDesc
+  FeaturedFoodFlex
 } from './styles/FeaturedFood.styled';
+import { Container } from './styles/Container.styled';
+
+import { foods } from '../data/fooditems';
+
+import FoodItem from './FoodItem';
 
 export default function FeaturedFood() {
   return (
     <StyledFeaturedFood>
-      <h3>Our Featured Food</h3>
-      <FeaturedFoodFlex>
-        <FeaturedFoodBox>
-          <FoodImage src='./images/pizza1_lg.png' />
-          <FoodCalories>654</FoodCalories>
-          <FoodName>Cheese Pizza</FoodName>
-          <FoodDesc>
-            BBQ infused pizza sauce, bacon, roasted chicken, pineapple, red
-            onion, cilantro, mozzarella
-          </FoodDesc>
-        </FeaturedFoodBox>
-      </FeaturedFoodFlex>
+      <Container>
+        <h3>Our Featured Food</h3>
+        <FeaturedFoodFlex>
+          {foods.map((food, index) => (
+            <FoodItem key={index} item={food} />
+          ))}
+        </FeaturedFoodFlex>
+      </Container>
     </StyledFeaturedFood>
   );
 }

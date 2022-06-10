@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global.styled';
-import { Container } from './components/styles/Container.styled';
 import Header from './components/Header';
 import FeaturedFood from './components/FeaturedFood';
 import './App.css';
@@ -22,9 +21,8 @@ function App() {
         <GlobalStyles />
         {/* transfer all this to HomePage later on */}
         <Header />
-        <Container>
-          <FeaturedFood></FeaturedFood>
-        </Container>
+
+        <FeaturedFood></FeaturedFood>
       </>
     </ThemeProvider>
   );
